@@ -2,7 +2,7 @@
 
 <article class="card flex-row gap-2 border p-2">
     <div class="d-flex flex-column gap-2">
-        <img src="{% static 'img/avatar.png' %}" class="img-thumbnail" width="48" height="48" alt="Avatar">
+        <img src="{% static 'img/avatar.png' %}" class="img-thumbnail" width="48" height="48" alt="image of question">
         <div class="d-flex flex-row justify-content-center gap-2" style="height: 10%; width: auto; min-height: 25px;">
             <div class="h-100">6</div>
 
@@ -17,19 +17,13 @@
         </div>
     </div>
     <div class="d-flex flex-column col">
-        <a href="{% url 'question' question.id %}">
-            <h5 class="mt-0 ">{{ question.title }}</h5>
-        </a>
-        <p class="lh-sm text-break card-text">{{ question.text }}</p>
-        <div class="d-flex flex-row justify-content-between gap-2">
-            <a href="{% url 'question' question.id %}">Answers(20)</a>
-            <div class="d-flex flex-row gap-2">
-                Tags:
-                <div class="d-flex flex-row flex-wrap gap-2">
-                    {% for tag in question.tags %}
-                        <a href="{% url 'tag' tag.tag_name %}">{{ tag.tag_name }}</a>
-                    {% endfor %}
-                </div>
+        <p class="lh-sm text-break card-text">{{ ask.text }}</p>
+        <div class="input-group">
+            <div class="input-group-text">
+                <input class="form-check-input me-2 " type="checkbox"
+                        {% if ask.is_correct %} checked {% endif %}
+                        {% if not ask.is_editable %} disabled {% endif %}>
+                <span>Correct!</span>
             </div>
         </div>
     </div>

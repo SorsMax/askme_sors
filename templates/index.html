@@ -1,4 +1,4 @@
-{% extends 'layouts/base_auth.html' %}
+{% extends 'layouts/base.html' %}
 
 {% load static %}
 
@@ -7,7 +7,7 @@
 
     <div class="d-flex gap-3 align-items-center">
         <h1 class="m-2">New questions</h1>
-        <a href="./hot-questions.html">Hot questions</a>
+        <a href="{% url 'hot' %}">Hot questions</a>
     </div>
         
     <div class="d-flex ms-2 gap-2 flex-column">
@@ -16,24 +16,7 @@
         {% endfor %}
     </div>
 
-    <nav aria-label="Page navigation example" class="m-2">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><p class="page-link">...</p></li>
-            <li class="page-item"><a class="page-link" href="#">53</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    {% include 'layouts/pagination.html' %}
+
 </div>
 {% endblock %}

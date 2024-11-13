@@ -39,7 +39,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
             <div class="container-fluid">
                 <div class="d-flex align-items-center w-1">
-                    <a href="#" class="navbar-brand">AskPimanov</a>
+                    <a href="{% url 'index' %}" class="navbar-brand">AskPimanov</a>
                 </div>
                 <div class="d-flex justify-content-between align-items-center w-8">
                     <form class="d-flex gap-1" role="search" style="width: 350px;">
@@ -71,14 +71,14 @@
                     <section class="popular-tags">
                         <h3 class="mb-2">Popular Tags</h3>
                         <nav class="d-flex gap-2 flex-wrap">
-                            <a href="#" style="text-decoration: none; color: black;">perl</a>
-                            <a href="#" style="text-decoration: none; color: red;">python</a>
-                            <a href="#" style="text-decoration: none; color: blue;">TechnoPark</a>
-                            <a href="#" style="text-decoration: none; color: red;">MySQL</a>
-                            <a href="#" style="text-decoration: none; color: green;">django</a>
-                            <a href="#" style="text-decoration: none; color: black;">Mail.ru</a>
-                            <a href="#" style="text-decoration: none; color: black;">Voloshin</a>
-                            <a href="#" style="text-decoration: none; color: orange;">Firefox</a>
+                            <a href="{% url 'tag' 'perl' %}" style="text-decoration: none; color: black;">perl</a>
+                            <a href="{% url 'tag' 'python' %}" style="text-decoration: none; color: red;">python</a>
+                            <a href="{% url 'tag' 'TechnoPark' %}" style="text-decoration: none; color: blue;">TechnoPark</a>
+                            <a href="{% url 'tag' 'MySQL' %}" style="text-decoration: none; color: red;">MySQL</a>
+                            <a href="{% url 'tag' 'django' %}" style="text-decoration: none; color: green;">django</a>
+                            <a href="{% url 'tag' 'Mail.ru' %}" style="text-decoration: none; color: black;">Mail.ru</a>
+                            <a href="{% url 'tag' 'Voloshin' %}" style="text-decoration: none; color: black;">Voloshin</a>
+                            <a href="{% url 'tag' 'Firefox' %}" style="text-decoration: none; color: orange;">Firefox</a>
                         </nav>
                     </section>
                     <section class="best-members">
